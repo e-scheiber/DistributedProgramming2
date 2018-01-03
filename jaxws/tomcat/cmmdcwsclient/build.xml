@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="generate.war" name="jaxws">
+    <property environment="env"/> 
+    <property name="wsdl.uri" value="http://localhost:8080/jaxws-cmmdc/cmmdcws?wsdl"/>
+    <property name="dist.name" value="jspclient" />
+    <property name="dist.dir" value="dist" />
+    <property name="app.name" value="cmmdc" />
+    
+    <path id="myclasspath">
+        <fileset dir="war/WEB-INF/lib" >
+            <include name="*.jar" />
+        </fileset>
+    </path>
+    
+    <target name="init">
+      <delete dir="${dist.dir}"/>
+      <mkdir dir="${dist.dir}"/>
+    </target>
+
+    <target name="generate-client" depends="init">
+       <exec executable="${env.JAVA_HOME}/bin/wsimport">
+          <arg value="-d"/>
+          <arg value="war/WEB-INF/classes"/>
+          <arg value="-keep"/>
+          <arg value="-p"/>
+          <arg value="${app.name}.client"/>
+          <arg value="${wsdl.uri}"/>
+       </exec>
+    </target>
+  
+    <target name="generate.war" depends="generate-client">
+       <jar destfile="${dist.dir}/${dist.name}.war" basedir="war" /> 
+    </target>  
+</project>

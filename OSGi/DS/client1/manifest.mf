@@ -1,0 +1,8 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: clientds1
+Service-Component: OSGI-INF/component.xml
+Private-Package: cmmdc.client
+Bundle-Name: Declarative Service Cmmdc Client
+Bundle-Description: DS Cmmdc Client
+Bundle-Version: 1.0.0
+Import-Package: cmmdc

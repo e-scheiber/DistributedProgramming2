@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension-point id="servlets" name="HttpService servlets" schema="schema/servlets.exsd"/>
+  <extension-point id="resources" name="HttpService resources" schema="schema/resources.exsd"/>
+  <extension-point id="httpcontexts" name="HttpService httpcontexts" schema="schema/httpcontexts.exsd"/>
+  <extension
+    id="myServlet"
+    point="org.eclipse.equinox.http.registry.servlets">
+    <servlet
+       alias="/plugin/cmmdc"
+       class="CmmdcServlet">
+    </servlet>
+  </extension>
+  <extension
+    id="cmmdcResource"
+    point="org.eclipse.equinox.http.registry.resources">
+    <resource
+      alias="/plugin/cmmdc.html"
+      base-name="/cmmdc.html"
+    />
+  </extension>
+</plugin>

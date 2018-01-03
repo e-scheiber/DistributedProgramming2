@@ -1,0 +1,3 @@
+install file:d:/mk/DISTR2/OSGi/agendae/interface/dist/iagendae.jar
+install file:d:/mk/DISTR2/OSGi/agendae/impl/dist/agendaeservice.jar
+install file:d:/mk/DISTR2/OSGi/agendae/client/dist/agendaeclient.jar

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: AgendaEMailServlet
+Bundle-SymbolicName: AgendaEMailServlet
+Bundle-Version: 1.0.0
+Bundle-Activator: Activator
+Bundle-Localization: plugin
+Bundle-Classpath: .,lib/derbyclient.jar
+Import-Package: javax.servlet,
+ javax.servlet.http,
+ org.osgi.framework;version="1.3.0",
+ org.osgi.service.http;version="1.2.0",
+ org.osgi.util.tracker;version="1.3.1" 
+ 

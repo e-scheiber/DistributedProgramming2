@@ -1,0 +1,1 @@
+java -cp .  client.ClientNotif server domain1 localhost 1099

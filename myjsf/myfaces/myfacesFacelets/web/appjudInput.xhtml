@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:ui="http://java.sun.com/jsf/facelets" 
+  xmlns:f="http://java.sun.com/jsf/core"
+  xmlns:h="http://java.sun.com/jsf/html">
+  <center>
+  <h1>Varianta cu Facelets </h1>
+  
+  <ui:decorate template="template.xhtml">
+    <ui:define name="title">
+       <h1>Informa&#355;ii despre judete</h1>
+    </ui:define>
+    <ui:define name="body">
+       <br/>
+       <h:form>
+         <h:panelGrid columns="2">
+            <h:outputText value="Referinte despre judetul : " styleClass="heading" />
+            <h:selectOneMenu  required="true" value="#{judBean.jud}">
+                <f:selectItems value="#{countyBean.judete}" />        
+            </h:selectOneMenu>
+            <h:commandButton id="submit" value="Afiseaza" action="regaseste" />
+         </h:panelGrid>            
+       </h:form>
+    </ui:define>  
+  </ui:decorate>
+  </center>
+</html>

@@ -1,0 +1,8 @@
+java -jar tyrus-client-cli-1.13.1.jar ws://localhost:8080/CmmdcWebSocketAD/cmmdc
+
+java -jar tyrus-client-cli-1.13.1.jar
+
+open ws://localhost:8080/CmmdcWebSocketAD/cmmdc
+send 56:42
+close
+quit

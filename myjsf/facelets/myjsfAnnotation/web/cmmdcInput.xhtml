@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:ui="http://java.sun.com/jsf/facelets" 
+  xmlns:h="http://java.sun.com/jsf/html">
+  <h1>Varianta cu Facelets </h1>
+  
+  <ui:decorate template="template.xhtml">
+    <ui:define name="title">
+       <h1>Cel mai mare divizor comun</h1>
+    </ui:define>
+    <ui:define name="body">
+  
+      <h:form>
+        <h:panelGrid columns="3">
+           <h:outputText value="Primul num&#259;r"/> 
+           <h:inputText id="m" value="#{cb.sm}" required="true" 
+              validator="#{cb.validateString}"/> 
+           <h:message for="m" />
+           <h:outputText value="Al doilea num&#259;r"/> 
+           <h:inputText id="n" value="#{cb.sn}" required="true"
+              validator="#{cb.validateString}"/>
+           <h:message for="n" />
+           <h:commandButton  action="#{cb.compute}" value="Calculeaz&#259;"/>
+        </h:panelGrid> 
+      </h:form>
+    </ui:define>  
+  </ui:decorate>
+</html>

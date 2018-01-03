@@ -1,0 +1,5 @@
+install file:d:/. . ./OSGiDistr/Servlet/bridge/helloname/dist/helloservlet.jar
+
+install file:d:/. . ./OSGiDistr/Servlet/bridge/cmmdc/dist/appcmmdc.jar
+
+install file:d:/. . ./OSGiDistr/Servlet/bridge/cmmdcplugin/dist/appcmmdc.jar

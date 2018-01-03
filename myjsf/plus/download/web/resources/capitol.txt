@@ -1,0 +1,7 @@
+Socluri
+RMI
+CORBA
+JMS
+Servlet
+JSP
+EJB

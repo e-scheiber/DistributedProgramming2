@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>CmmdcClient.html</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>unitbv.cs.td.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>cmmdcrpc</servlet-name>
+    <servlet-class>unitbv.cs.td.server.CmmdcServiceImpl</servlet-class>
+  </servlet>
+
+    <servlet-mapping>
+    <servlet-name>cmmdcrpc</servlet-name>
+    <url-pattern>/cmmdcclient/cmmdcrpc</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/cmmdcclient/greet</url-pattern>
+  </servlet-mapping>
+
+</web-app>

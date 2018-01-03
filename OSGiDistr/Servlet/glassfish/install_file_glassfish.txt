@@ -1,0 +1,3 @@
+asadmin osgi start file:d:/. . ./Servlet/glassfish/cmmdc/dist/cmmdcservlet.jar
+
+asadmin osgi start file:d:/. . ./Servlet/glassfish/helloname/dist/helloservlet.jar

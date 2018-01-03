@@ -1,0 +1,18 @@
+/** Add css rules here for your application. */
+
+
+/** Example rules used by the template application (remove for your app) */
+.button {
+  display: block;
+  font-size: 16pt
+}
+
+.label-title{
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 18pt
+}
+
+.vpanel{
+  background: #aaeeaa;
+}

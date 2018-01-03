@@ -1,0 +1,25 @@
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+  <package name="mystruts" extends="struts-default">
+    
+    
+    <action name="Cmmdc" class="cmmdc.Cmmdc" method="computeCmmdc">
+      <result>/jsp/ResultCmmdc.jsp</result>
+      <result name="input">/jsp/Cmmdc.jsp</result>
+    </action>
+    
+    <action name="*" >
+      <result>/html/AlegeApp.html</result>
+    </action>
+    
+    <action name="AlegeJudetul" class="appjud.ListaJudeteAction">
+      <result>/jsp/AppJud.jsp</result>
+    </action>
+
+    <action name="RefJudet" class="appjud.JudBean">
+      <result>/jsp/ResultJud.jsp</result>
+    </action>
+  </package>
+</struts>

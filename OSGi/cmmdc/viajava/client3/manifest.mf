@@ -1,0 +1,7 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: clientcmmdc3
+Bundle-Name: CmmdcClient 3
+Bundle-Description: Simple Cmmdc Client 3
+Bundle-Version: 1.0.0
+Bundle-Activator: cmmdc.client.Activator
+Import-Package: org.osgi.framework,cmmdc,javax.swing

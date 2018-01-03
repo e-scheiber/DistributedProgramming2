@@ -1,0 +1,1 @@
+Se copiaza derbyclient.jar in catalogul impl/lib

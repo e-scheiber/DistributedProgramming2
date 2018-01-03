@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mk:structura xmlns:mk="http://www.distr2.edu" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.distr2.edu struct-schema.xsd">
+ 
+  <mk:disciplina fel="obligatoriu">
+    <mk:nume> Analiza numerica </mk:nume>
+    <mk:fond-de-timp>
+       <mk:curs>2</mk:curs>
+       <mk:seminar>1</mk:seminar>
+       <mk:laborator>1</mk:laborator>
+    </mk:fond-de-timp>
+  </mk:disciplina>
+  <mk:disciplina fel="obligatoriu">
+    <mk:nume> Programare distribuita </mk:nume>
+    <mk:fond-de-timp>
+       <mk:curs>2</mk:curs>
+       <mk:seminar>0</mk:seminar>
+       <mk:laborator>2</mk:laborator>
+    </mk:fond-de-timp>
+  </mk:disciplina>
+  <mk:disciplina fel="obligatoriu">
+    <mk:nume> Soft matematic </mk:nume>
+    <mk:fond-de-timp>
+       <mk:curs>2</mk:curs>
+       <mk:seminar>0</mk:seminar>
+       <mk:laborator>1</mk:laborator>
+    </mk:fond-de-timp>
+  </mk:disciplina>
+</mk:structura>

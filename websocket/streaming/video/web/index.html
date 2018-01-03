@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Image Streaming</title>
+    
+    <script src="download.js"></script>
+    <script language="javascript" type="text/javascript">
+      var wsUri = "ws://localhost:8080/VideoStreaming/video";
+      var websocket = new WebSocket(wsUri);
+      websocket.onopen = function(evt) { onOpen(evt) };
+      websocket.onmessage = function(evt) { onMessage(evt) };
+      websocket.onerror = function(evt) { onError(evt) };
+      websocket.onclose = function(evt) { onClose(evt) };
+      
+      function init() {
+        output = document.getElementById("result");
+      } 
+      
+      function send() { 
+        var msg=document.video.fisier.value;   
+        websocket.send(msg);   
+        writeToScreen("SENT: " + msg);
+      }
+      
+      function myclose(){
+        websocket.close();
+      }
+           
+      function onOpen(evt) {
+        writeToScreen("CONNECTED");
+      }
+
+      function onMessage(evt) {
+        writeToScreen("Response type: "+evt.data);
+        var blob=evt.data;
+        writeToScreen("Size: "+blob.size);
+        download(blob, "video.avi");     
+      }
+
+      function onError(evt) {
+        writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+      }
+      
+      function onClose(evt) {
+        writeToScreen("CLOSED");
+      }
+      
+      function writeToScreen(message) {   
+        var pre = document.createElement("p");
+        pre.style.wordWrap = "break-word";
+        pre.innerHTML = message;
+        output.appendChild(pre);
+      }
+
+      window.addEventListener("load", init, false);
+    </script>
+  </head>
+  <body>
+    <h1>Streaming with WebSocket!!</h1>
+    <div style="text-align: center;">
+      <form name="video"> 
+        <table border="1">
+          <tr>
+            <td> Alegeti fisierul dorit </td>
+            <td> <select name="fisier">
+                   <option value="1"> "airhorse.avi"
+                   <option value="2"> "video1.avi"				   
+                 </select>
+            </td>
+            <td>
+               <input type="button" value="Apelati" onclick="send()"/> 
+            </td>
+          </tr>  
+          <tr>
+            <td></td>
+            <td></td>
+            <td>
+               <input type="button" value="Inchide" onclick="myclose()"/> 
+            </td>
+          </tr>  
+        </table>
+      </form>
+    </div>
+    <div id="result"></div>
+  </body>
+</html>

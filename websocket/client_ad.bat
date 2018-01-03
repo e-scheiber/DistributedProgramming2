@@ -1,0 +1,1 @@
+java -jar tyrus-client-cli-1.2.1.jar ws://localhost:8080/CmmdcWebSocketAD/cmmdc

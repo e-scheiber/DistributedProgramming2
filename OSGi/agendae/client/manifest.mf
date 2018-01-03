@@ -1,0 +1,8 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: agendaeclient
+Bundle-Name: Client AgendaEMail
+Bundle-Description: Client AgendaEMail
+Bundle-Vendor: Apache Felix
+Bundle-Version: 1.0.0
+Bundle-Activator: agendae.client.Activator
+Import-Package: org.osgi.framework,agendae

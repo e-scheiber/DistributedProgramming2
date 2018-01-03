@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h1>Calcul cmmdc</h1>
+	<h:form>
+		<p:panel id="mypanel1" header="CMMDC">    
+			<p:separator></p:separator>			
+			<p:panelGrid columns="2" cellpadding="5"> 
+				<h:outputText id="out1" value="Primul numar:"></h:outputText>
+        <p:keyboard id="key1" value="#{cb1.sm}">
+           <p:ajax event="change"  update="out0 key1" />
+        </p:keyboard>  
+				<h:outputText id="out2" value="Al doilea numar:"></h:outputText>
+        <p:keyboard id="key2" value="#{cb1.sn}">
+           <p:ajax event="change"  update="out0 key2" />
+        </p:keyboard>
+				<p:commandButton value="Calculeaza!" actionListener="#{cb1.compute}" update="out0"></p:commandButton> 
+        <h:outputText id="out0" value="#{cb1.sresult}"></h:outputText>
+      </p:panelGrid>
+    </p:panel>	
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<project name="cmmdc" default="package" basedir=".">
+	
+  <target name="package">
+    <ant dir="interface" target="generate.jar"/>
+    <ant dir="impl" target="main"/>
+    <ant dir="client" target="main"/>
+  </target>
+
+</project>

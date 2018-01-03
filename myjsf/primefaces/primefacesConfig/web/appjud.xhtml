@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+</h:head>
+<h:body>
+	<h1>Referin&#355;e despre judete</h1>
+	
+	<h:form>
+		<p:panel header="Judete"> 
+		
+			<p:panelGrid columns="2" cellpadding="5"> 
+				<h:outputText id="out1" value="Judetul:"></h:outputText>			
+				<p:selectOneMenu value="#{judBean.jud}" id="x2" update="out2">
+		            <!--<f:selectItem itemLabel="Select One" itemValue="" />-->
+		            <f:selectItems value="#{countyBean.judete}"/>
+		        </p:selectOneMenu>             
+	        	<p:commandButton value="Cauta !" actionListener="#{judBean.execute}" update="out3 out4 out5"></p:commandButton> 
+        <h:outputText id="out6" value=""></h:outputText> 
+        <h:outputText id="out7" value="Judetul"></h:outputText>        
+				<h:outputText id="out3" value="#{judBean.jud}"></h:outputText>
+        <h:outputText id="out8" value="Capitala"></h:outputText>
+        <h:outputText id="out4" value="#{judBean.capit}"></h:outputText>
+        <h:outputText id="out9" value="Abrevierea"></h:outputText>
+        <h:outputText id="out5" value="#{judBean.abrev}"></h:outputText>
+	       	</p:panelGrid>
+		
+		  	
+	    
+        </p:panel>	
+	</h:form>
+	
+	
+</h:body>
+</html>

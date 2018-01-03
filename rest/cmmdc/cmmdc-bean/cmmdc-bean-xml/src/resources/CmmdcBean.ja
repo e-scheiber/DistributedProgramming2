@@ -1,0 +1,30 @@
+package resources;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlValue;
+
+@XmlRootElement(name="date")
+@XmlAccessorType(XmlAccessType.PUBLIC_MEMBER)
+public class CmmdcBean{
+  @XmlElement(name = "sm")
+  public String sm;
+  
+  @XmlValue
+  public String smValue;
+  
+  @XmlElement(name = "sn")
+  public String sn;
+  
+  @XmlValue
+  public String snValue;
+  
+  /*
+  @XmlElement(name = "result")
+  public String result;
+  
+  @XmlValue
+  public String resultValue;
+  */
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="primul" extends="struts-default">
+     <interceptors>
+       	<interceptor-stack name="defaultStackWithLog">
+             <interceptor-ref name="timer"/>
+             <interceptor-ref name="logger"/>
+	           <interceptor-ref name="defaultStack" />
+       </interceptor-stack>
+    </interceptors>
+    
+		<action name="MyAction" class="exemplu.MyAction">
+      <interceptor-ref name="defaultStackWithLog"/>
+			<result>success.jsp</result>
+		</action>
+	</package>
+</struts>

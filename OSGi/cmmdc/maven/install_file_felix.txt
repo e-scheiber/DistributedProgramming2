@@ -1,0 +1,3 @@
+start file:d:/. . ./cmmdc/maven/interface/target/icmmdc-1.0.0.jar
+start file:d:/. . ./cmmdc/maven/impl/target/cmmdcservice-1.0.0.jar
+start file:d:/. . ./cmmdc/maven/client/target/clientcmmdc-1.0.0.jar

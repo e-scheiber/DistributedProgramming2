@@ -1,0 +1,6 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: icmmdc
+Bundle-Name: Interfata Cmmdc
+Bundle-Vendor: unitbv
+Bundle-Version: 1.0.0
+Export-Package: cmmdc;version="1.0.0"

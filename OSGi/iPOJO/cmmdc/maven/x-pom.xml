@@ -1,0 +1,14 @@
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>ipojo.tutorial</artifactId>
+  <groupId>ipojo.cmmdc</groupId>
+  <version>1.0.0</version>
+  <name>Apache Felix iPOJO Tutorial</name>
+  <packaging>pom</packaging>
+  <modules>
+	<module>interface</module>
+	<module>impl</module>
+	<module>client</module>
+  </modules>
+</project>

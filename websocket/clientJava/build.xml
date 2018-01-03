@@ -1,0 +1,31 @@
+<project basedir="." default="run">
+
+  <!--<property name="server.home" location="d:/JavaApp/apache-tomcat-8.0.23/lib"/>-->
+  <property name="server.home" location="d:/JavaApp/glassfish-4.1.2/glassfish4/glassfish/modules"/>
+  <property name="build.dir" value="build"/>
+
+  <path id="myclasspath">
+    <fileset dir="${server.home}">
+       <include name="*.jar"/>
+    </fileset>
+    <pathelement path="${build.dir}"/>
+  </path> 
+   
+  <target name="init">
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}" />
+  </target>
+  
+  <target name="compile" depends="init">
+    <javac classpathref="myclasspath"
+           includeantruntime="false"
+           srcdir="${basedir}/src" 
+           destdir="${build.dir}">
+      <compilerarg value="-Xlint"/>    
+    </javac>             
+  </target>
+  
+  <target name="run" depends="compile">
+    <java classname="WebSocketClient" classpathref="myclasspath" fork="true"/>
+  </target>
+</project>

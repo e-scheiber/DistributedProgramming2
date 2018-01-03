@@ -1,0 +1,31 @@
+<project basedir="." default="generate.war">
+
+  <property name="dist.name" value="JsonCmmdc" />
+  <property name="dist.dir" value="dist" /> 
+  <property name="glassfish.home" location="e:/JavaApp/glassfish4"/> 
+  
+  <path id="myclasspath">
+    <fileset dir="${glassfish.home}/glassfish/modules">
+       <include name="*.jar"/>
+    </fileset> 
+  </path> 
+   
+  <target name="init">
+    <delete dir="${dist.dir}"/>
+    <delete dir="web/WEB-INF/classes"/> 
+    <mkdir dir="web/WEB-INF/classes"/>
+    <mkdir dir="${dist.dir}" />
+  </target>
+  
+  <target name="compile" depends="init">
+    <javac classpathref="myclasspath"
+           includeantruntime="false" 
+           srcdir="${basedir}/src/resources" 
+           destdir="web/WEB-INF/classes" />             
+  </target>
+  
+  <target name="generate.war" depends="compile">
+    
+    <jar destfile="${dist.dir}/${dist.name}.war" basedir="web" />
+  </target>
+</project>

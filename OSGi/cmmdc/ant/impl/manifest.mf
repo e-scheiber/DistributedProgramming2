@@ -1,0 +1,6 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: cmmdcservice
+Bundle-Name: Cmmdc Service
+Bundle-Version: 1.0.0
+Bundle-Activator: cmmdc.service.Activator
+Import-Package: org.osgi.framework,cmmdc

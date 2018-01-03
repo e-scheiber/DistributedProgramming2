@@ -1,0 +1,12 @@
+/** Add css rules here for your application. */
+
+.pc-template-btn {
+  display: block;
+  font-size: 16pt;
+}
+
+.label-title{
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: bold;
+  font-size: 18pt
+} 

@@ -1,0 +1,55 @@
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>bundle</packaging>
+  <groupId>cmmdc.impl</groupId>
+  <artifactId>cmmdc.service</artifactId>
+  <version>1.0.0</version>
+  <name>Cmmdc Service Provider</name>
+
+   <properties>
+    <path>e:/mk/distr/OSGi/iPOJO/cmmdc/maven</path>
+   </properties>
+  
+  <dependencies>
+    <dependency>
+      <groupId>cmmdc</groupId>
+      <artifactId>icmmdc</artifactId>
+      <version>1.0.0</version>
+      <scope>system</scope>
+      <systemPath>${path}/interface/target/icmmdc-1.0.0.jar</systemPath> 
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
+        <version>3.0.1</version>
+        <extensions>true</extensions>
+        <configuration>
+          <instructions>
+            <Bundle-SymbolicName>
+              ${pom.artifactId}
+            </Bundle-SymbolicName>
+            <Private-Package>
+              cmmdc.service
+            </Private-Package>
+          </instructions>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-ipojo-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>ipojo-bundle</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

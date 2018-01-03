@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+   <bean id="cmmdc" class="cmmdc.service.CmmdcService" scope="prototype"/>
+   
+   <service id="serviceClient" ref="cmmdc"> 
+      <interfaces>
+        <value>cmmdc.ICmmdc</value>
+      </interfaces>
+      <registration-listener 
+              registration-method="register" unregistration-method="unregister">
+          <bean class="cmmdc.client.RegistrationListener"/>         
+         
+      </registration-listener>
+   </service>    
+   
+</blueprint>

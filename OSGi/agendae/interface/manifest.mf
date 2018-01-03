@@ -1,0 +1,6 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: iagendae
+Bundle-Name: Interfata AgendaEMail
+Bundle-Vendor: unitbv
+Bundle-Version: 1.0.0
+Export-Package: agendae;version="1.0.0"

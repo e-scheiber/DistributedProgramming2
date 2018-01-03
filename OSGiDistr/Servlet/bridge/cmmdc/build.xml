@@ -1,0 +1,37 @@
+<project basedir="." default="generate.jar">
+  <property name="OSGi" value="e:/JavaApp/felix-framework-5.6.1"/>
+  <property name="tomcat.home" value="e:/JavaApp/apache-tomcat-8.5.6"/>
+  <property name="dist.name" value="appcmmdc" />
+  <property name="dist.dir" value="dist" />
+  <property name="build.dir" value="build"/>
+  <property name="manifest.name" value="manifest"/>
+  
+  <path id="myclasspath">
+    <fileset dir="../lib">
+       <include name="*.jar"/>
+    </fileset>
+    <pathelement path="${OSGi}/bin/felix.jar"/>
+    <pathelement path="${tomcat.home}/lib/servlet-api.jar" />
+  </path> 
+   
+  <target name="init">
+    <delete dir="${dist.dir}"/>
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}" />
+  </target>
+  
+  <target name="compile" depends="init">
+    <javac classpathref="myclasspath"
+           includeantruntime="false"
+           srcdir="src" 
+           destdir="${build.dir}"/>             
+  </target>
+  
+  <target name="generate.jar" depends="compile">
+    <copy todir="${build.dir}" file="web/cmmdc.html"/>
+    <jar destfile="${dist.dir}/${dist.name}.jar" 
+      manifest="${manifest.name}.mf" 
+      basedir="${build.dir}" />
+  </target>
+</project>

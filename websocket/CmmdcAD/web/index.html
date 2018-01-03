@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Cmmdc WebSocket</title>
+
+    <script language="javascript" type="text/javascript">
+      var wsUri = "ws://localhost:8080/CmmdcWebSocketAD/cmmdc";
+      var websocket = new WebSocket(wsUri);
+      websocket.onopen = function(evt) { onOpen(evt) };
+      websocket.onmessage = function(evt) { onMessage(evt) };
+      websocket.onerror = function(evt) { onError(evt) };
+      websocket.onclose = function(evt) { onClose(evt) };
+      
+      function init() {
+        output = document.getElementById("result");
+      } 
+      
+      function send() { 
+        var sm=document.cmmdc.m.value;
+        var sn=document.cmmdc.n.value;
+        var msg=sm+":"+sn;     
+        websocket.send(msg);   
+        writeToScreen("SENT: " + msg);
+      }
+      
+      function onOpen(evt) {
+        writeToScreen("CONNECTED");
+      }
+
+      function onMessage(evt) {
+        writeToScreen("RECEIVED: " + evt.data);
+      }
+
+      function onError(evt) {
+        writeToScreen('<span style="color: red;">ERROR:</span> ' + evt.data);
+      }
+      
+      function onClose(evt) {
+        writeToScreen("CLOSED");
+      }
+      
+      function myclose(){
+        websocket.close();
+      }
+      
+      function writeToScreen(message) {   
+        var pre = document.createElement("p");
+        pre.style.wordWrap = "break-word";
+        pre.innerHTML = message;
+        output.appendChild(pre);
+      }
+
+      window.addEventListener("load", init, false);
+    </script>
+  </head>
+  <body>
+    <h1>CMMDC with WebSocket!!</h1>
+    <div style="text-align: center;">
+      <form name="cmmdc"> 
+        <table border="1"> 
+        <tr>
+          <td><label> Primul numar </label></td>
+          <td>    
+             <input type="number" name="m" size="15" 
+             placeholder="Introduceti un numar"
+             required min="1">
+          </td>
+        </tr>  
+        <tr>
+          <td><label> Al doilea numar </label></td>
+          <td>
+             <input type="number" name="n" size="15" 
+             placeholder="Introduceti un numar"
+             required min="1">
+          </td>
+        </tr>
+        <tr>
+          <td>          
+             <input type="button" value="Calculeaza" onclick="send()"/> 
+          </td>
+        </tr>
+        <tr>
+          <td>
+             <input type="button" value="Inchide" onclick="myclose()"/> 
+          </td>
+          <td></td>
+        </tr>  
+       </table>  
+      </form>
+    </div>
+    <div id="result"></div>
+  </body>
+</html>

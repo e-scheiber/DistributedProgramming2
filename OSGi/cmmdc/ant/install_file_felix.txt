@@ -1,0 +1,5 @@
+start file:d:/. . ./ant/interface/dist/icmmdc.jar
+start file:d:/. . ./ant/impl/dist/cmmdcservice.jar
+start file:d:/. . ./ant/client1/dist/clientcmmdc1.jar
+start file:d:/. . ./ant/client2/dist/clientcmmdc2.jar
+start file:d:/. . ./ant/client3/dist/clientcmmdc3.jar

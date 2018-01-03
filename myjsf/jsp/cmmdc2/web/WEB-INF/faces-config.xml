@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+        http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+    
+  <navigation-rule>
+    <description/>
+    <from-view-id>/cmmdcInput.jsp</from-view-id>
+    <navigation-case>
+      <description/>
+      <from-outcome>OK</from-outcome>
+      <to-view-id>/cmmdcOutput.jsp</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+
+  <managed-bean>
+    <description/>
+    <managed-bean-name>cmmdcController</managed-bean-name>
+    <managed-bean-class>cmmdc.controller.CmmdcController</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+       <property-name>cmmdcBean</property-name>
+       <value>#{cmmdcBean}</value>
+    </managed-property>
+  </managed-bean>
+
+  <managed-bean>
+    <description/>
+    <managed-bean-name>cmmdcBean</managed-bean-name>
+    <managed-bean-class>cmmdc.model.CmmdcBean</managed-bean-class>
+    <managed-bean-scope>none</managed-bean-scope>
+  </managed-bean>
+</faces-config>

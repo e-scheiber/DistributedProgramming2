@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="help" name="jaxws">
+    <property environment="env"/> 
+    <property name="wsdl.uri" value="http://localhost:8080/jaxws-cmmdc/cmmdcws?wsdl"/>
+    <property name="app.name" value="cmmdc" />
+    <property name="client.class" value="CmmdcAsyncClient" />
+    <property name="build.dir" value="build"/>
+    
+    <path id="myclasspath">
+        <fileset dir="lib" >
+            <include name="*.jar" />
+        </fileset>
+        <pathelement location="${build.dir}"/>
+        <pathelement location="${env.JAVA_HOME}/lib/tools.jar"/>
+    </path>
+    
+    <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+      <classpath refid="myclasspath"/>
+    </taskdef>
+    
+    <target name="init">
+      <delete dir="${build.dir}"/>
+      <mkdir dir="${build.dir}"/>
+    </target>
+
+    <target name="generate-client" depends="init">
+      <wsimport
+        debug="true"
+        verbose="${verbose}"
+        keep="true"
+        destdir="${build.dir}"
+        package="${app.name}.client"
+        binding="etc/custom-client.xml"
+        xendorsed="true"
+        wsdl="${wsdl.uri}">
+        <arg line="-extension"/>     
+      </wsimport>
+    </target>
+     
+    <target name="compile" depends="generate-client">
+        <javac  includeantruntime="false" 
+                srcdir="${basedir}/src"
+                destdir="${build.dir}"
+                classpathref="myclasspath"/>     
+    </target>
+
+    <target name="run">
+        <java fork="true" 
+              classname="${app.name}.client.${client.class}"
+              classpathref="myclasspath"/>
+    </target>
+
+    <target name="help">
+        <echo message="compile:           Builds the client"/>
+        <echo message="run:               Runs the client"/>
+    </target>
+</project>

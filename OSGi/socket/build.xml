@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<project name="OSGi_socket" default="package" basedir=".">
+	
+	<target name="package">
+		<ant dir="interface" target="generate.jar"/>
+		<ant dir="impl" target="generate.jar"/>
+		<ant dir="serversocket" target="generate.jar"/>
+    <!--
+		<ant dir="client2" target="generate.jar"/>
+    -->
+	</target>
+
+</project>

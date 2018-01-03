@@ -1,0 +1,36 @@
+<project basedir="." default="generate.war">
+
+  <property name="TOMCAT_HOME" value="d:/JavaApp/apache-tomcat-8.5.20"/> 
+  <property name="dist.name" value="myfacesFaceletsan" />
+  <property name="dist.dir" value="dist" />
+  <property name="build.dir" value="web/WEB-INF/classes"/>
+
+  <path id="myclasspath">
+    <fileset dir="web/WEB-INF/lib">
+       <include name="*.jar"/>
+    </fileset>
+    <pathelement path="${TOMCAT_HOME}/lib/servlet-api.jar" /> 
+  </path> 
+   
+  <target name="init">
+    <delete dir="${build.dir}"/>
+    <delete dir="${dist.dir}"/>
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}" />    
+    <copy todir="${build.dir}/appjud" file="src/judete.txt"/>
+  </target>
+  
+  <target name="compile" depends="init">
+    <javac classpathref="myclasspath"
+           includeantruntime="false" 
+           srcdir="src" 
+           destdir="${build.dir}">  
+      <compilerarg value="-Xlint"/>  
+    </javac>           
+  </target>
+  
+  <target name="generate.war" depends="compile">   
+    <jar destfile="${dist.dir}/${dist.name}.war" basedir="web" />
+  </target>
+ 
+</project>

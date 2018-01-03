@@ -1,0 +1,4 @@
+Bundle-Name: Interfata Socket
+Bundle-Vendor: unitbv
+Bundle-Version: 1.0.0
+Export-Package: iserver;version="1.0.0"

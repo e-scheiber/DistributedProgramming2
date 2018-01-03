@@ -1,0 +1,9 @@
+start file:d:/. . ./OSGi/DS/lib/org.osgi.compendium-5.0.0.jar
+start file:d:/. . ./OSGi/DS/lib/org.apache.felix.scr-2.0.12.jar
+start file:d:/. . ./OSGi/DS/interface/dist/icmmdc.jar
+start file:d:/. . ./OSGi/DS/impl/dist/cmmdcservice.jar
+start file:d:/. . ./OSGi/DS/client1/dist/clientds1.jar
+start file:d:/. . ./OSGi/DS/client2/dist/clientds2.jar
+
+
+d:/. . .

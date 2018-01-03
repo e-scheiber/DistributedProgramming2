@@ -1,0 +1,7 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: clientcmmdc2
+Bundle-Name: CmmdcClient 2
+Bundle-Description: Simple Cmmdc Client 2
+Bundle-Version: 1.0.0
+Bundle-Activator: cmmdc.client.Activator
+Import-Package: org.osgi.framework,org.osgi.util.tracker,cmmdc

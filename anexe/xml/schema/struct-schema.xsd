@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:mk="http://www.distr2.edu"
+ targetNamespace="http://www.distr2.edu">
+
+  <xsd:element name="structura">
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="mk:disciplina"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="disciplina">
+    <xsd:complexType mixed="true">
+      <xsd:sequence>
+        <xsd:element ref="mk:nume"/>
+        <xsd:element ref="mk:fond-de-timp"/>
+      </xsd:sequence>
+      <xsd:attribute name="fel" type="xsd:string" use="required"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="nume" type="xsd:string"/>
+
+  <xsd:element name="fond-de-timp">
+    <xsd:complexType mixed="true">
+      <xsd:sequence>
+        <xsd:element ref="mk:curs"/>
+        <xsd:element ref="mk:seminar"/>
+        <xsd:element ref="mk:laborator"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="curs" type="xsd:string"/>
+
+  <xsd:element name="seminar" type="xsd:string"/>
+
+  <xsd:element name="laborator" type="xsd:string"/>
+</xsd:schema>

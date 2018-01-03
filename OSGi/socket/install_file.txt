@@ -1,0 +1,4 @@
+install file:d:/mk/DISTR2/OSGi/socket/interface/dist/isocket.jar
+install file:d:/mk/DISTR2/OSGi/socket/impl/dist/socket.jar
+install file:d:/mk/DISTR2/OSGi/socket/serversocket/dist/serversocket.jar
+

@@ -1,0 +1,7 @@
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: agendaeservice
+Bundle-Name: AgendaEMail Service
+Bundle-Version: 1.0.0
+Bundle-Activator: agendae.service.Activator
+Import-Package: org.osgi.framework,agendae,javax.sql,javax.naming,javax.crypto,javax.crypto.spec,javax.net
+Bundle-Classpath: .,lib/derbyclient.jar

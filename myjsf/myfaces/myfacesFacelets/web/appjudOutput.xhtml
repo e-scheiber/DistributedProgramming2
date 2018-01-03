@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" 
+  xmlns:ui="http://java.sun.com/jsf/facelets" 
+  xmlns:h="http://java.sun.com/jsf/html">
+  <h1>Varianta cu Facelets </h1>
+  
+  <ui:decorate template="template.xhtml">
+    <ui:define name="title">
+       <h1>Referin&#355;ele despre jude&#355;</h1>
+    </ui:define>
+    <ui:define name="body">
+        <h:panelGrid columns="2">
+           <h:outputText value="Referintele despre judetul " />
+           <h:outputText value="#{judBean.jud}" />
+           <h:outputText value="Capitala : " />
+           <h:outputText value="#{judBean.capit}" />
+           <h:outputText value="Abrevierea : " />
+           <h:outputText value="#{judBean.abrev}" />
+        </h:panelGrid> 
+    </ui:define>  
+  </ui:decorate>
+</html>

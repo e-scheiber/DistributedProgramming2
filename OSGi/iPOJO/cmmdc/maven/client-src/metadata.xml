@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipojo 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="org.apache.felix.ipojo http://felix.apache.org/ipojo/schemas/CURRENT/core.xsd" 
+    xmlns="org.apache.felix.ipojo">
+
+  <component classname="cmmdc.client.CmmdcClient">
+    <requires field="m_cmmdc" />
+    <callback transition="validate" method="starting" />
+    <callback transition="invalidate" method="stopping" />
+    <properties>
+      <property field="sm" name="sm" />
+      <property field="sn" name="sn" />
+    </properties>
+  </component>
+
+  <instance component="cmmdc.client.CmmdcClient">
+    <property name="sm" value="56" />
+    <property name="sn" value="42" />
+  </instance>
+</ipojo>

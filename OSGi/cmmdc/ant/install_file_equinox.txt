@@ -1,0 +1,5 @@
+install file:d:/. . ./ant/interface/dist/icmmdc.jar
+install file:d:/. . ./ant/impl/dist/cmmdcservice.jar
+install file:d:/. . ./ant/client1/dist/clientcmmdc1.jar
+install file:d:/. . ./ant/client2/dist/clientcmmdc2.jar
+install file:d:/. . ./ant/client3/dist/clientcmmdc3.jar

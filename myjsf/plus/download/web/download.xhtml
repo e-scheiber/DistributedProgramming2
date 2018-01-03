@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:f="http://xmlns.jcp.org/jsf/core"
+        xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<body>
+  <f:view>
+    <h:form id="form">
+        <h:messages/>
+        <h:panelGrid columns="2">
+            <h:outputText value="File:"/>
+            <h:selectOneMenu required="true" value="#{downloadPage.file}">
+              <f:selectItem itemLabel="xml-pic.jpg" itemValue="xml-pic.jpg"/>
+              <f:selectItem itemLabel="capitol.txt" itemValue="capitol.txt"/>
+            </h:selectOneMenu>
+        </h:panelGrid>
+
+        <h:commandButton value="Download File" action="#{downloadPage.downloadFile}"/>
+    </h:form>
+   </f:view>  
+</body>
+</html>

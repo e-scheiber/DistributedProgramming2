@@ -1,0 +1,97 @@
+<application xmlns="http://wadl.dev.java.net/2009/02">
+<doc xmlns:jersey="http://jersey.java.net/" jersey:generatedBy="Jersey: 2.13 2014-09-29 16:04:33"/>
+<doc xmlns:jersey="http://jersey.java.net/" jersey:hint="This is full WADL including extended resources. To get simplified WADL with users resources only do not use the query parameter detail. Link: http://localhost:8080/Cmmdc/resources/application.wadl"/>
+<grammars/>
+<resources base="http://localhost:8080/Cmmdc/resources/">
+<resource path="cmmdc">
+<method id="doGet" name="GET">
+<response>
+<representation mediaType="*/*"/>
+</response>
+</method>
+<method id="apply" name="OPTIONS">
+<request>
+<representation mediaType="*/*"/>
+</request>
+<response>
+<representation mediaType="application/vnd.sun.wadl+xml"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+<method id="apply" name="OPTIONS">
+<request>
+<representation mediaType="*/*"/>
+</request>
+<response>
+<representation mediaType="text/plain"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+<method id="apply" name="OPTIONS">
+<request>
+<representation mediaType="*/*"/>
+</request>
+<response>
+<representation mediaType="*/*"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+</resource>
+<resource path="application.wadl">
+<method id="getWadl" name="GET">
+<response>
+<representation mediaType="application/vnd.sun.wadl+xml"/>
+<representation mediaType="application/xml"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+<method id="apply" name="OPTIONS">
+<request>
+<representation mediaType="*/*"/>
+</request>
+<response>
+<representation mediaType="text/plain"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+<method id="apply" name="OPTIONS">
+<request>
+<representation mediaType="*/*"/>
+</request>
+<response>
+<representation mediaType="*/*"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+<resource path="{path}">
+<param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="path" style="template" type="xs:string"/>
+<method id="geExternalGrammar" name="GET">
+<response>
+<representation mediaType="application/xml"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+<method id="apply" name="OPTIONS">
+<request>
+<representation mediaType="*/*"/>
+</request>
+<response>
+<representation mediaType="text/plain"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+<method id="apply" name="OPTIONS">
+<request>
+<representation mediaType="*/*"/>
+</request>
+<response>
+<representation mediaType="*/*"/>
+</response>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</method>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</resource>
+<jersey:extended xmlns:jersey="http://jersey.java.net/">true</jersey:extended>
+</resource>
+</resources>
+</application>

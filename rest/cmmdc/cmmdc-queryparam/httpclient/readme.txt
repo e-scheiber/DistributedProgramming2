@@ -1,0 +1,1 @@
+Se copiaza in cmmdc-formparam catalogul commons.

@@ -1,0 +1,34 @@
+<project name="clientds1" basedir="." default="generate.jar">
+  <property file="../build.properties"/>
+
+  <path id="myclasspath">
+    <pathelement path="${OSGi}.jar"/>
+    <pathelement path="../interface/dist/icmmdc.jar"/>
+    <fileset dir="lib">
+       <include name="*.jar"/>
+    </fileset>
+  </path> 
+   
+  <target name="init">
+    <delete dir="${dist.dir}"/>
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}" />
+  </target>
+  
+  <target name="compile" depends="init">
+    <javac classpathref="myclasspath"
+           includeantruntime="false" 
+           srcdir="src" 
+           destdir="${build.dir}"/>             
+  </target>
+  
+  <target name="generate.jar" depends="compile">
+    <copy todir="${build.dir}/OSGI-INF">
+       <fileset dir="OSGI-INF"/>
+    </copy> 
+    <jar destfile="${dist.dir}/${ant.project.name}.jar" 
+      manifest="${manifest.name}.mf" 
+      basedir="${build.dir}"/>
+  </target>
+</project>

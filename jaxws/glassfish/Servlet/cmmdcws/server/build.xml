@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="generate.war" name="jaxws">
+    <property environment="env"/> 
+    <property name="GLASSFISH_HOME" location="e:/JavaApp/glassfish5"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="dist.name" value="cmmdc" />
+    
+    <path id="myclasspath">
+      <fileset dir="${GLASSFISH_HOME}/glassfish/modules" >
+          <include name="*.jar" />
+      </fileset>
+      <pathelement location="${env.JAVA_HOME}/lib/tools.jar"/>
+    </path>
+    
+    <taskdef name="apt" classname="com.sun.tools.ws.ant.Apt">
+       <classpath refid="myclasspath"/>
+    </taskdef>
+    
+    <target name="init">
+      <delete dir="${dist.dir}"/>
+      <mkdir dir="${dist.dir}"/>
+      <delete dir="war/WEB-INF/classes"/>
+      <mkdir dir="war/WEB-INF/classes"/>
+    </target>
+
+    <target name="build-server" depends="init">
+      <apt
+        fork="true"
+        debug="true"
+        destdir="war/WEB-INF/classes"
+        sourcedestdir="war/WEB-INF/classes"
+        sourcepath="src">
+        <classpath>
+          <path refid="myclasspath"/>
+        </classpath>
+        <source dir="src">
+          <include name="**/server/*.java"/>             
+        </source>
+      </apt>
+    </target>
+     
+    <target name="generate.war" depends="build-server">
+       <jar destfile="${dist.dir}/jaxws-${dist.name}.war" basedir="war" /> 
+    </target>       
+</project>

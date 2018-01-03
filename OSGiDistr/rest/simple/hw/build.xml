@@ -1,0 +1,32 @@
+<project basedir="." default="generate.war">
+  <property name="OSGi" location="e:/JavaApp/felix-framework-5.6.1"/> 
+  <property name="dist.name" value="osgihw" />
+  <property name="dist.dir" value="dist" />
+  <property name="build.dir" value="build"/>
+  <property name="manifest.name" value="manifest"/>
+  
+  <path id="myclasspath">
+    <pathelement path="${OSGi}/bin/felix.jar"/> 
+    <fileset dir="../../lib">
+       <include name="*.jar"/>
+    </fileset>
+  </path> 
+   
+  <target name="init">
+    <delete dir="${dist.dir}"/>
+    <mkdir dir="${dist.dir}" />
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}" />
+  </target>
+  
+  <target name="compile" depends="init">
+    <javac classpathref="myclasspath"
+           includeantruntime="false"
+           srcdir="${basedir}/src" 
+           destdir="${build.dir}" />             
+  </target>
+  
+  <target name="generate.war" depends="compile">
+    <jar destfile="${dist.dir}/${dist.name}.jar" basedir="${build.dir}"  manifest="${manifest.name}.mf"  />
+  </target>
+</project>

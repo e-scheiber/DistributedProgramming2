@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: CmmdcServlet PlugIn
+Bundle-SymbolicName: CmmdcServlet PlugIn;singleton:=true 
+Bundle-Version: 1.0.0
+Bundle-Localization: plugin
+Import-Package: javax.servlet,
+ javax.servlet.http
+Require-Bundle: org.eclipse.equinox.http.registry 

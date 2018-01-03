@@ -1,0 +1,40 @@
+<project basedir="." default="generate.war">
+
+  <!--<property name="TOMCAT.HOME" location="d:/JavaApp/apache-tomcat-7.0.47"/>-->
+  <property name="GLASSFISH.HOME" location="e:/JavaApp/glassfish4"/>
+  <property name="OSGi" location="e:/JavaApp/felix-framework-5.6.1"/> 
+  <property name="dist.name" value="cmmdcservlet" />
+  <property name="dist.dir" value="dist" />
+  <property name="build.dir" value="build"/>
+  <property name="manifest.name" value="manifest"/>
+  
+  <path id="myclasspath">
+    <!--<pathelement path="${TOMCAT.HOME}/lib/servlet-api.jar"/>-->
+    <pathelement path="${OSGi}/bin/felix.jar"/> 
+    <fileset dir="../lib">
+       <include name="*.jar"/>
+    </fileset>
+    <fileset dir="${GLASSFISH.HOME}/glassfish/modules">
+       <include name="*.jar"/>
+    </fileset>
+  </path> 
+   
+  <target name="init">
+    <delete dir="${dist.dir}"/>
+    <mkdir dir="${dist.dir}" />
+    <delete dir="${build.dir}"/>
+    <mkdir dir="${build.dir}" />
+  </target>
+  
+  <target name="compile" depends="init">
+    <javac classpathref="myclasspath"
+           includeantruntime="false"
+           srcdir="${basedir}/src" 
+           destdir="${build.dir}" />             
+  </target>
+  
+  <target name="generate.war" depends="compile">
+    <copy todir="${build.dir}" file="web/cmmdc.html"/>
+    <jar destfile="${dist.dir}/${dist.name}.jar" basedir="${build.dir}"  manifest="${manifest.name}.mf"  />
+  </target>
+</project>

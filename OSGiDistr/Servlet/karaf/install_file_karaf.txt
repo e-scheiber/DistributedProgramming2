@@ -1,0 +1,5 @@
+install file:. . ./OSGiDistr/Servlet/karaf/helloname/dist/helloservlet.jar
+
+install file:. . ./OSGiDistr/Servlet/karaf/cmmdc/dist/cmmdcservlet.jar
+
+Componenta trebuie lansata prin comanda OSGi start

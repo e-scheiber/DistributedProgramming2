@@ -1,0 +1,4 @@
+Bundle-Name: SocketService
+Bundle-Version: 1.0.0
+Bundle-Activator: server.Activator
+Import-Package: org.osgi.framework,iserver

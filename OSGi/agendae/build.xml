@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<project name="agendae" default="package" basedir=".">
+	
+  <target name="package">
+    <ant dir="interface" target="generate.jar"/>
+    <ant dir="impl" target="generate.jar"/>
+    <ant dir="client" target="generate.jar"/>
+  </target>
+
+</project>

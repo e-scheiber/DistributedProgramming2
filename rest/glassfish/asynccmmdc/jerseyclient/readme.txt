@@ -1,0 +1,1 @@
+Se copiaza in catalogul lib resursele jersey.

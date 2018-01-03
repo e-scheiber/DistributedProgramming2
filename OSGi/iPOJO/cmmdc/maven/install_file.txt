@@ -1,0 +1,7 @@
+start file:d:/. . ./resources/org.apache.felix.ipojo-1.12.1.jar
+start file:d:/. . ./resources/org.apache.felix.shell-1.4.3.jar
+start file:d:/. . ./resources/org.apache.felix.ipojo.arch-1.6.0.jar
+
+start file:d:/. . ./cmmdc/maven/interface/target/icmmdc-1.0.0.jar
+start file:d:/. . ./cmmdc/maven/impl/target/cmmdc.service-1.0.0.jar
+start file:d:/. . ./cmmdc/maven/client/target/cmmdc.client-1.0.0.jar

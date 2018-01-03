@@ -1,0 +1,19 @@
+<html>
+  <body>
+    <center>
+      <h1> Serviciu Hello de tip RESTful </h1>
+      <form method="get"
+            action="http://localhost:8080/Hello/resources/hello">
+       <p> Introduceti numele 
+       <input type="text" name="nume" size="10" />  
+       <p> Selectati tipul raspunsului 
+       <select name="tip">
+         <option value="text/plain"> Text/Plain </option>
+         <option value="text/html"> Text/Html </option>
+       </select> 
+       <p>
+       <input type="submit" value="Apeleaza" />
+      </form>
+    </center>
+    </body>
+</html>
